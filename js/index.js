@@ -3,7 +3,7 @@ const $navItem = $('.nav-item');
 $navItem.click(function () {
     $(this).addClass('js-click').siblings().removeClass('js-click');
 })
-
+console.log($('.icon-setting'));
 
 // today
 // const $today = $('.today');
@@ -17,14 +17,10 @@ $navItem.click(function () {
 // icon
 
 const $icon = $('.icon');
-const $iconSun = $('.icon-sun');
 const $iconMoon = $('.icon-moon');
 
-$iconSun.click(function () {
-    $icon.addClass('js-icon-bright-mode');
-})
 $iconMoon.click(function () {
-    $icon.addClass('js-icon-dark-mode');
+    $icon.toggleClass('js-icon-dark-mode');
 })
 
 
@@ -40,10 +36,9 @@ $iconToggle.click(function () {
 // :root
 
 const $root = $(':root');
-const $background = $('.setting-background');
 var bg = true;
 
-$background.click(function () {
+$iconMoon.click(function () {
     bg ? $root.css({
         "--bg-color1": "rgb(100, 100, 100)",
         "--bg-color2": "rgb(255, 255, 255)",
@@ -70,14 +65,17 @@ $background.click(function () {
 // setting
 const $cn = $('.cn');
 const $en = $('.en');
-const $language = $('.setting-language');
+const $language = $('.icon-language');
 
+var language = true;
 $cn.addClass('js-cnange-language')
 
 $language.click(function () {
-    $cn.toggleClass('js-cnange-language').toggleClass('js-select');
-    $en.toggleClass('js-cnange-language');
-
+    language ? $language.css({ "background-position-y": "-240px", })
+        : $language.css({ "background-position-y": "-270px", });
+    $cn.toggleClass('js-cnange-language').toggleClass('js-select')
+    $en.toggleClass('js-cnange-language')
+    language = !language;
 })
 
 const $changeBackground = $('.js-change-background');
