@@ -14,6 +14,19 @@ $navItem.click(function () {
 //     var day = date.getDate();
 // })
 
+// icon
+
+const $icon = $('.icon');
+const $iconSun = $('.icon-sun');
+const $iconMoon = $('.icon-moon');
+
+$iconSun.click(function () {
+    $icon.addClass('js-icon-bright-mode');
+})
+$iconMoon.click(function () {
+    $icon.addClass('js-icon-dark-mode');
+})
+
 
 // data box
 const $iconToggle = $('.icon-toggle');
@@ -72,5 +85,4 @@ const $changeBackground = $('.js-change-background');
 $changeBackground.click(function () {
     $changeBackground.toggleClass('js-change-background').siblings().toggleClass('js-change-background');
 })
-
 
