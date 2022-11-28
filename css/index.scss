@@ -118,7 +118,8 @@ a {
 // }
 
 // icon
-.icon>a {
+.icon>a,
+.icon>div {
     display: block;
     background: url(../images/icon.png) no-repeat;
     width: 30px;
@@ -138,10 +139,6 @@ a.icon-ppt {
     background-position-y: -60px;
 }
 
-a.icon-language {
-    background-position-y: -90px;
-}
-
 a.icon-setting {
     background-position-y: -150px;
 }
@@ -154,11 +151,7 @@ a.icon-moon {
     background-position-y: -210px;
 }
 
-a.icon-cn {
-    background-position-y: -240px;
-}
-
-a.icon-en {
+a.icon-language {
     background-position-y: -270px;
 }
 
@@ -198,9 +191,6 @@ nav {
     }
 }
 
-.nav-icon {
-    margin-left: 20px;
-}
 
 .nav-ls {
     display: flex;
@@ -241,10 +231,17 @@ nav {
 }
 
 // sub-nav
+.setting-nav-ls {
+    display: flex;
+    .setting-nav-item {
+        padding: 10px;
+    }
+}
 .sub-nav-ls {
     display: none;
     position: absolute;
     flex-direction: column;
+    flex-wrap: nowrap;
     justify-content: center;
 
     li {
@@ -253,7 +250,7 @@ nav {
         transition: all .2s;
 
         &:hover {
-            background-color: var(--bg-color1);
+            background-color: var(--bg-color3);
         }
     }
 }
@@ -269,7 +266,7 @@ nav {
             }
 
             &:hover {
-                background-color: var(--bg-color3);
+                background-color: var(--bg-color5);
             }
         }
     }
@@ -478,10 +475,10 @@ section.page-count::after {
     color: var(--bg-color1);
 }
 
-.js-icon-bright-mode {
+.js-icon-bright-mode a.icon {
     background-position-x: 0;
 }
 
-.js-icon-dark-mode {
+.js-icon-dark-mode a {
     background-position-x: -30px;
 }
