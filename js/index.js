@@ -1,3 +1,4 @@
+const $nav = $('nav');
 const $navItem = $('.nav-item');
 
 $navItem.click(function () {
@@ -82,5 +83,11 @@ const $changeBackground = $('.js-change-background');
 
 $changeBackground.click(function () {
     $changeBackground.toggleClass('js-change-background').siblings().toggleClass('js-change-background');
+})
+
+const $List = $('.icon-list');
+
+$List.click(function () {
+    $nav.toggleClass('js-list-open')
 })
 
