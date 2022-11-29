@@ -4,16 +4,6 @@ const $navItem = $('.nav-item');
 $navItem.click(function () {
     $(this).addClass('js-click').siblings().removeClass('js-click');
 })
-console.log($('.icon-setting'));
-
-// today
-// const $today = $('.today');
-// $(document).ready(function () {
-//     var myDate = new Date;
-//     var year = date.getFullYear();
-//     var month = date.getMonth() + 1;
-//     var day = date.getDate();
-// })
 
 // icon
 
@@ -24,6 +14,15 @@ $iconMoon.click(function () {
     $icon.toggleClass('js-icon-dark-mode');
 })
 
+// ppt-web mode
+
+const $iconComputer = $('.icon-computer');
+const $webOnly = $('.web-only');
+
+$iconComputer.click(function () {
+    $(this).toggleClass('icon-computer').toggleClass('icon-ppt');
+    $webOnly.toggle()
+})
 
 // data box
 const $iconToggle = $('.icon-toggle');
@@ -91,3 +90,7 @@ $List.click(function () {
     $nav.toggleClass('js-list-open')
 })
 
+
+// RWD
+
+const $window = $(window).width();
