@@ -63,6 +63,12 @@ p.cn {
   position: relative;
 }
 
+.align-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
   display: grid;
   width: 50%;
@@ -97,6 +103,10 @@ p.cn {
 }
 .img-filter:hover img {
   opacity: 0.8;
+}
+
+.img-shadow {
+  box-shadow: 10px 10px var(--bg-color7);
 }
 
 .fig-count-en::after,
@@ -289,6 +299,7 @@ section.page-count::after {
   position: absolute;
   bottom: 10%;
   right: 5%;
+  color: var(--font-color);
 }
 
 .outline {
@@ -423,7 +434,7 @@ section.page-count::after {
 .reference-table thead {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 30px;
 }
 
 .reference-table {
@@ -436,8 +447,13 @@ section.page-count::after {
   border-bottom: solid var(--font-color) 1px;
   padding: 5px;
 }
+.reference-table tbody {
+  -ms-scroll-snap-type: y mandatory;
+      scroll-snap-type: y mandatory;
+}
 .reference-table tr {
   height: 30px;
+  scroll-snap-align: start;
 }
 .reference-table th,
 .reference-table td {
@@ -485,6 +501,26 @@ section.page-count::after {
 .type2 .head-box,
 .type2 .body-box {
   width: 100%;
+}
+
+section.type3 {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(1, minmax(200px, 1fr));
+  padding: 20vh 20vw 10vh;
+  position: relative;
+}
+section.type3 h1 {
+  vertical-align: bottom;
+}
+section.type3 .head-box,
+section.type3 .body-box {
+  display: flex;
+  gap: 20px;
+}
+section.type3 .head-box .inner-box,
+section.type3 .body-box .inner-box {
+  padding: 0 5%;
 }
 
 .nav-ls .js-click {

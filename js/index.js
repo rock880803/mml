@@ -104,12 +104,22 @@ $(document).ready(function () {
 const $reference = $('#tab>tr');
 const $literatureLibrary = $('.literature-library > embed');
 
-$reference.click(function(){
+$reference.click(function () {
     $(this).addClass('js-reference-select').siblings().removeClass('js-reference-select');
-    var refNum = $(this).index()+1;
-    $literatureLibrary.attr("src",`/ref/${refNum}.pdf`);
+    var refNum = $(this).index() + 1;
+    $literatureLibrary.attr("src", `/ref/${refNum}.pdf`);
     console.log($literatureLibrary);
 })
 // RWD
 
 const $window = $(window).width();
+
+
+// img
+
+const $imgBox = $('.img-box-border>img');
+
+$imgBox.load(function () {
+    $('this').width();
+    $('this').height();
+})

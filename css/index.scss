@@ -8,8 +8,6 @@
     display: none;
 }
 
-// test
-
 body {
     font-family: 'DM Serif Text', 'Noto Sans TC', "微軟正黑體", 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     counter-reset: section img;
@@ -64,7 +62,11 @@ p.cn {
 .body-box {
     position: relative;
 }
-
+.align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .grid {
     display: grid;
     width: 50%;
@@ -103,6 +105,10 @@ p.cn {
     &:hover img {
         opacity: .8;
     }
+}
+
+.img-shadow {
+    box-shadow: 10px 10px var(--bg-color7);
 }
 
 .fig-count-en::after,
@@ -326,6 +332,7 @@ section.page-count::after {
         position: absolute;
         bottom: 10%;
         right: 5%;
+        color: var(--font-color);
     }
 }
 
@@ -378,8 +385,6 @@ section.page-count::after {
         }
     }
 }
-
-
 
 
 .grid {
@@ -479,11 +484,10 @@ section.page-count::after {
 
 .reference-table thead {
     position: sticky;
-    top: 0;
+    top: 30px;
 }
 
 .reference-table {
-
     color: var(--font-color);
     line-height: 30px;
 
@@ -494,8 +498,13 @@ section.page-count::after {
         padding: 5px;
     }
 
+    tbody {
+        scroll-snap-type: y mandatory;
+    }
+
     tr {
         height: 30px;
+        scroll-snap-align: start;
     }
 
     th,
@@ -515,7 +524,6 @@ section.page-count::after {
     width: 100%;
     height: 80vh;
     border-radius: 5px;
-    // display: none;
 }
 
 .search-input {
@@ -552,6 +560,27 @@ section.page-count::after {
     .body-box {
         width: 100%;
     }
+}
+
+section.type3 {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(1,minmax(200px,1fr));
+    padding: 20vh 20vw 10vh;
+    position: relative;
+    h1 {
+        vertical-align: bottom;
+    }
+
+    .head-box,
+    .body-box {
+        display: flex;
+        gap: 20px;
+        .inner-box {
+            padding: 0 5%;
+        }
+    }
+    
 }
 
 // js
