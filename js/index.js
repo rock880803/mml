@@ -66,15 +66,17 @@ $iconMoon.click(function () {
 const $cn = $('.cn');
 const $en = $('.en');
 const $language = $('.icon-language');
+const $figCount = $('.fig-count-en');
 
 var language = true;
 $cn.addClass('js-cnange-language')
-
+console.log($figCount);
 $language.click(function () {
     language ? $language.css({ "background-position-y": "-240px", })
         : $language.css({ "background-position-y": "-270px", });
-    $cn.toggleClass('js-cnange-language').toggleClass('js-select')
-    $en.toggleClass('js-cnange-language')
+    $figCount.toggleClass('fig-count-en').toggleClass('fig-count-cn')
+    $cn.toggleClass('js-cnange-language');
+    $en.toggleClass('js-cnange-language');
     language = !language;
 })
 
@@ -89,6 +91,16 @@ const $List = $('.icon-list');
 $List.click(function () {
     $nav.toggleClass('js-list-open')
 })
+// refence-search
+
+$(document).ready(function () {
+    $('#search').on('keyup', function () {
+        var value = $(this).val().toLowerCase();
+        $('#tab tr').filter(function () {
+            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
+    });
+});
 
 
 // RWD
