@@ -46,7 +46,7 @@ $iconMoon.click(function () {
         "--bg-color4": "rgb(255, 255, 255)",
         "--bg-color5": "rgb(255, 255, 255)",
         "--bg-color6": "rgb(255, 255, 255)",
-        "--bg-color7": "rgb(255, 255, 255)",
+        "--bg-color7": "rgb(155, 155, 155)",
         "--font-color": "rgb(0, 0, 0)",
     }) : $root.css({
         "--bg-color1": "rgb(255, 41, 92)",
@@ -55,7 +55,7 @@ $iconMoon.click(function () {
         "--bg-color4": "rgb(28, 28, 28)",
         "--bg-color5": "rgb(35, 35, 35)",
         "--bg-color6": "rgb(57, 57, 57)",
-        "--bg-color7": "rgb(255, 255, 255)",
+        "--bg-color7": "rgb(155, 155, 155)",
         "--font-color": "rgb(255, 255, 255)",
     });
     bg = !bg;
@@ -70,7 +70,6 @@ const $figCount = $('.fig-count-en');
 
 var language = true;
 $cn.addClass('js-cnange-language')
-console.log($figCount);
 $language.click(function () {
     language ? $language.css({ "background-position-y": "-240px", })
         : $language.css({ "background-position-y": "-270px", });
@@ -102,7 +101,15 @@ $(document).ready(function () {
     });
 });
 
+const $reference = $('#tab>tr');
+const $literatureLibrary = $('.literature-library > embed');
 
+$reference.click(function(){
+    $(this).addClass('js-reference-select').siblings().removeClass('js-reference-select');
+    var refNum = $(this).index();
+    $literatureLibrary.eq(refNum).addClass('js-reference-show').siblings().removeClass('js-reference-show');
+    console.log($literatureLibrary);
+})
 // RWD
 
 const $window = $(window).width();
