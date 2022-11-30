@@ -106,8 +106,8 @@ const $literatureLibrary = $('.literature-library > embed');
 
 $reference.click(function(){
     $(this).addClass('js-reference-select').siblings().removeClass('js-reference-select');
-    var refNum = $(this).index();
-    $literatureLibrary.eq(refNum).addClass('js-reference-show').siblings().removeClass('js-reference-show');
+    var refNum = $(this).index()+1;
+    $literatureLibrary.attr("src",`/ref/${refNum}.pdf`);
     console.log($literatureLibrary);
 })
 // RWD

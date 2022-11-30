@@ -393,6 +393,7 @@ section.page-count::after {
   justify-content: start;
   -moz-column-gap: 20px;
        column-gap: 20px;
+  overflow: hidden;
 }
 .reference h3 {
   color: var(--font-color);
@@ -402,12 +403,35 @@ section.page-count::after {
 .reference .search-input {
   margin-left: 50px;
 }
+.reference .head-box {
+  overflow-y: scroll;
+}
+.reference .head-box::-webkit-scrollbar {
+  display: none;
+}
+.reference .body-box {
+  max-width: 100%;
+}
+
+.serch-box {
+  background-color: var(--bg-color6);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.reference-table thead {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
 
 .reference-table {
   color: var(--font-color);
   line-height: 30px;
 }
 .reference-table thead {
+  background-color: var(--bg-color6);
   border-top: solid var(--font-color) 1px;
   border-bottom: solid var(--font-color) 1px;
   padding: 5px;
@@ -420,12 +444,17 @@ section.page-count::after {
   padding: 0 5px;
 }
 
+.literature-library {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .literature-library > embed {
   background-color: #fff;
   width: 100%;
   height: 80vh;
   border-radius: 5px;
-  display: none;
 }
 
 .search-input {

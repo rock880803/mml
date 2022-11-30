@@ -446,6 +446,7 @@ section.page-count::after {
     flex-direction: column;
     justify-content: start;
     column-gap: 20px;
+    overflow: hidden;
 
     h3 {
         color: var(--font-color);
@@ -456,6 +457,29 @@ section.page-count::after {
     .search-input {
         margin-left: 50px;
     }
+
+    .head-box {
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        overflow-y: scroll;
+    }
+
+    .body-box {
+        max-width: 100%;
+    }
+}
+
+.serch-box {
+    background-color: var(--bg-color6);
+    position: sticky;
+    top: 0;
+}
+
+.reference-table thead {
+    position: sticky;
+    top: 0;
 }
 
 .reference-table {
@@ -464,7 +488,7 @@ section.page-count::after {
     line-height: 30px;
 
     thead {
-
+        background-color: var(--bg-color6);
         border-top: solid var(--font-color) 1px;
         border-bottom: solid var(--font-color) 1px;
         padding: 5px;
@@ -480,12 +504,18 @@ section.page-count::after {
     }
 }
 
+.literature-library {
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
 .literature-library>embed {
     background-color: #fff;
     width: 100%;
     height: 80vh;
     border-radius: 5px;
-    display: none;
+    // display: none;
 }
 
 .search-input {
@@ -574,7 +604,7 @@ section.page-count::after {
     background-color: var(--bg-color7);
 }
 
-.literature-library>embed.js-reference-show{
+.literature-library>embed.js-reference-show {
     display: block;
 }
 
