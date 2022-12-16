@@ -1,17 +1,23 @@
 const $nav = $('nav');
 const $navItem = $('.nav-item');
+const $immersionBlock = $('.immersion-block');
 
+$immersionBlock.hide();
 $navItem.click(function () {
+    var text = $(this).find('.immer-en').text()
     $(this).addClass('js-click').siblings().removeClass('js-click');
+    $immersionBlock.stop(true, false).html(text).show().fadeOut(800);
 })
 
 // icon
 
 const $icon = $('.icon');
 const $iconMoon = $('.icon-moon');
+const $changeBackground = $('.js-change-white');
 
 $iconMoon.click(function () {
-    $icon.toggleClass('js-icon-dark-mode');
+    $icon.toggleClass('js-icon-white-mode');
+    $changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-change-white');
 })
 
 // ppt-web mode
@@ -43,7 +49,7 @@ $iconMoon.click(function () {
         "--bg-color1": "rgb(100, 100, 100)",
         "--bg-color2": "rgb(255, 255, 255)",
         "--bg-color3": "rgb(255, 255, 255)",
-        "--bg-color4": "rgb(255, 255, 255)",
+        "--bg-color4": "rgb(10, 10, 10)",
         "--bg-color5": "rgb(255, 255, 255)",
         "--bg-color6": "rgb(255, 255, 255)",
         "--bg-color7": "rgb(155, 155, 155)",
@@ -79,17 +85,7 @@ $language.click(function () {
     language = !language;
 })
 
-const $changeBackground = $('.js-change-background');
 
-$changeBackground.click(function () {
-    $changeBackground.toggleClass('js-change-background').siblings().toggleClass('js-change-background');
-})
-
-const $List = $('.icon-list');
-
-$List.click(function () {
-    $nav.toggleClass('js-list-open')
-})
 // refence-search
 
 $(document).ready(function () {
