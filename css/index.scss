@@ -481,6 +481,7 @@ section.page-count::after {
 
         .two-line-decoration {
             padding: 0 50px;
+            text-transform: none;
 
             &::before,
             &::after {

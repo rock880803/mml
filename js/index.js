@@ -2,6 +2,47 @@ const $nav = $('nav');
 const $navItem = $('.nav-item');
 const $immersionBlock = $('.immersion-block');
 
+const $windowHeight = $(window).height();
+const $scrollContainer = $('.scroll-container');
+const NumIntroduction = $('.introduction').length;
+const NumLiterature = $('.literature').length;
+const NumExperiment = $('.experiment').length;
+const NumResults = $('.results').length;
+const NumDiscussion = $('.discussion').length;
+
+const anchorIntroduction = $windowHeight*(2);
+const anchorLiterature = anchorIntroduction+$windowHeight*NumLiterature;
+const anchorExperiment = anchorLiterature+$windowHeight*NumExperiment;
+const anchorResults = anchorExperiment+$windowHeight*NumResults;
+const anchorDiscussion = anchorResults+$windowHeight*NumDiscussion;
+
+$scrollContainer.scroll(function () {
+    var position = $(this).scrollTop();
+    console.log(position);
+    if (position < $windowHeight*2) {
+        $navItem.removeClass('js-click');
+
+    } else if (position > $windowHeight*2-200 && position <= anchorIntroduction) {
+        $('#introduction').addClass('js-click').siblings().removeClass('js-click');
+
+    } else if (position > anchorIntroduction && position <= anchorLiterature) {
+        $('#literature').addClass('js-click').siblings().removeClass('js-click');
+
+    } else if (position > anchorLiterature && position <= anchorExperiment) {
+        $('#experiment').addClass('js-click').siblings().removeClass('js-click');
+
+    } else if (position > anchorExperiment && position <= anchorResults) {
+        $('#results').addClass('js-click').siblings().removeClass('js-click');
+
+    } else if (position > anchorResults && position <= anchorDiscussion) {
+        $('#discussion').addClass('js-click').siblings().removeClass('js-click');
+
+    } else if (position > anchorDiscussion) {
+        $('#reference').addClass('js-click').siblings().removeClass('js-click');
+
+    }
+});
+
 $immersionBlock.hide();
 $navItem.click(function () {
     var text = $(this).find('.immer-en').text()

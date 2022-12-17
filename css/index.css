@@ -421,6 +421,7 @@ section.page-count::after {
 }
 .head-box .two-line-decoration {
   padding: 0 50px;
+  text-transform: none;
 }
 .head-box .two-line-decoration::before, .head-box .two-line-decoration::after {
   content: "";
