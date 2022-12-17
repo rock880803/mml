@@ -140,6 +140,9 @@ p.cn {
 
 .fig-count-en::after,
 .fig-count-cn::after {
+  position: absolute;
+  bottom: -30px;
+  left: 0;
   counter-increment: img;
   font-size: 16px;
   line-height: 1.5;
@@ -413,18 +416,22 @@ section.page-count::after {
   text-transform: capitalize;
 }
 
-.introduction .head-box {
+.head-box {
   margin-bottom: 40px;
 }
-.introduction .head-box h1 {
+.head-box .two-line-decoration {
   padding: 0 50px;
 }
-.introduction .head-box h1::before, .introduction .head-box h1::after {
+.head-box .two-line-decoration::before, .head-box .two-line-decoration::after {
   content: "";
   width: 2px;
   height: 15px;
   margin: 0 100px;
   background-color: var(--font-color);
+}
+
+.size-Oldage {
+  width: 40vw;
 }
 
 .table-surfactant {
@@ -436,6 +443,13 @@ section.page-count::after {
 .table-surfactant thead {
   border-bottom: solid 1px var(--font-color);
   padding: 10px;
+}
+.table-surfactant thead td {
+  display: flex;
+  justify-content: center;
+}
+.table-surfactant tbody:last-child {
+  border-bottom: solid 1px var(--font-color);
 }
 .table-surfactant tr {
   margin: 10px 0;

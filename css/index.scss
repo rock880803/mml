@@ -96,14 +96,13 @@ p.cn {
 .title-border {
     border-bottom: 3px solid var(--font-color);
     margin-bottom: 20px;
-
 }
 
 // tool-img
 .img-box {
     position: relative;
-
 }
+
 
 .max80vh {
     max-height: 80vh;
@@ -153,6 +152,10 @@ p.cn {
 
 .fig-count-en::after,
 .fig-count-cn::after {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+
     counter-increment: img;
     font-size: 16px;
     line-height: 1.5;
@@ -472,11 +475,11 @@ section.page-count::after {
 
 
 // introduction
-.introduction {
+
     .head-box {
         margin-bottom: 40px;
 
-        h1 {
+        .two-line-decoration {
             padding: 0 50px;
 
             &::before,
@@ -489,6 +492,11 @@ section.page-count::after {
             }
         }
     }
+
+
+
+.size-Oldage {
+    width: 40vw;
 }
 
 // literature review
@@ -502,11 +510,19 @@ section.page-count::after {
     thead {
         border-bottom: solid 1px var(--font-color);
         padding: 10px;
-        
-    }
-    tbody {
+
         td {
-            
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+
+    tbody {
+        td {}
+
+        &:last-child {
+            border-bottom: solid 1px var(--font-color);
         }
 
     }
@@ -515,16 +531,18 @@ section.page-count::after {
         margin: 10px 0;
         display: flex;
         flex-wrap: nowrap;
+
         td {
             width: 20%;
-           
+
         }
+
         td:first-child {
             width: 15%;
-           
+
         }
-        
-        
+
+
     }
 }
 
