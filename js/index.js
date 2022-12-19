@@ -65,10 +65,13 @@ $iconMoon.click(function () {
 
 const $iconComputer = $('.icon-computer');
 const $webOnly = $('.web-only');
+const $pptOnly = $('.ppt-only');
 
+$pptOnly.hide();
 $iconComputer.click(function () {
     $(this).toggleClass('icon-computer').toggleClass('icon-ppt');
     $webOnly.toggle()
+    $pptOnly.toggle()
 })
 
 // data box
