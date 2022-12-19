@@ -11,7 +11,7 @@
 
 body {
   font-family: "DM Serif Text", "Noto Sans TC", "微軟正黑體", "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  counter-reset: section img;
+  counter-reset: section img table alpha;
   overflow: hidden;
 }
 
@@ -56,6 +56,7 @@ p.cn {
   --bg-color6: rgb(57, 57, 57);
   --bg-color7: rgb(136, 136, 136);
   --font-color: rgb(255, 255, 255);
+  --font-color-content: rgb(255, 255, 255);
 }
 
 .head-box,
@@ -95,6 +96,11 @@ p.cn {
   margin-bottom: 20px;
 }
 
+span.sup {
+  font-size: 8px;
+  vertical-align: top;
+}
+
 span.sub {
   font-size: 8px;
   vertical-align: bottom;
@@ -110,8 +116,20 @@ span.sub {
   height: fit-content;
 }
 
+.top-15 {
+  top: -15%;
+}
+
 .max80vh {
   max-height: 80vh;
+}
+
+.max50vw {
+  max-width: 50vw;
+}
+
+.mtop10 {
+  margin-top: 10px;
 }
 
 .img-shadow {
@@ -123,9 +141,26 @@ span.sub {
 }
 
 .img-hover-zoomin:hover {
+  position: relative;
   transform: scale(2);
   transition: transform 0.3s;
   z-index: 1;
+}
+
+.img-hover-grid-overlap {
+  transition: 1s transform 5s;
+}
+.img-hover-grid-overlap:hover .grid {
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.img-hover-grid-overlap:hover .white-protect:nth-child(2) {
+  transform: translateY(-100%);
+}
+.img-hover-grid-overlap:hover::after {
+  content: "";
 }
 
 .img-resp {
@@ -140,13 +175,12 @@ span.sub {
   vertical-align: bottom;
 }
 
-.img-box-border::after {
+.img-box-border::before {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   border: var(--font-color) 3px solid;
-  transform: translate(-100%, 0);
 }
 
 .img-filter img {
@@ -160,23 +194,22 @@ span.sub {
 .fig-count-en::after,
 .fig-count-cn::after {
   position: absolute;
-  bottom: -30px;
+  width: 100%;
+  top: 100%;
   left: 0;
   counter-increment: img;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 1px;
-  text-align: justify;
   color: var(--font-color);
-  width: 100%;
 }
 
 .fig-count-en::after {
-  content: "Fig " counter(img) ". " attr(caption-en) ".";
+  content: "Figure " counter(img) ". " attr(caption-en) ".";
 }
 
 .fig-count-cn::after {
-  content: "圖 " counter(img) ". " attr(caption-cn) "。";
+  content: "圖 " counter(img) "、" attr(caption-cn) "。";
 }
 
 .fig-count-svg-offset::after {
@@ -185,15 +218,55 @@ span.sub {
 }
 
 .fig-count-alpha {
-  counter-set: alpha-counter;
+  counter-set: alpha;
 }
 .fig-count-alpha > *::after {
-  counter-increment: alpha-counter;
-  content: "(" counter(alpha-counter, lower-alpha) ")";
+  counter-increment: alpha;
+  content: "(" counter(alpha, lower-alpha) ")";
   position: absolute;
   color: #fff;
+  top: 0;
   left: 0;
   margin: 5px;
+}
+
+.fig-count-alpha-grid {
+  counter-set: alpha;
+}
+.fig-count-alpha-grid .white-protect::after {
+  counter-increment: alpha;
+  content: "(" counter(alpha, lower-alpha) ")";
+  position: absolute;
+  color: var(--font-color);
+  top: 0;
+  left: -15px;
+  margin: 5px;
+}
+
+table {
+  position: relative;
+  margin-top: 5%;
+}
+
+.table-count-cn::before,
+.table-count-en::before {
+  counter-increment: table;
+  position: absolute;
+  top: -60px;
+  font-size: 16px;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table-count-en::before {
+  content: "Table " counter(table) ". " attr(caption-en) ".";
+}
+
+.table-count-cn::before {
+  content: "表 " counter(table) "、" attr(caption-cn) "。";
 }
 
 .reference {
@@ -379,6 +452,9 @@ section.page-count::after {
   color: var(--font-color);
 }
 
+.homepage {
+  overflow: hidden;
+}
 .homepage .head-box {
   top: 10%;
   width: 100%;
@@ -393,6 +469,15 @@ section.page-count::after {
   bottom: 10%;
   right: 5%;
   color: var(--font-color);
+}
+
+.img-homepage {
+  position: absolute;
+  bottom: -100%;
+  left: -65%;
+  transform: rotate(0);
+  transform-origin: 50% 50%;
+  transition: transform 0.5s;
 }
 
 .outline {
@@ -476,7 +561,7 @@ section.page-count::after {
 
 .vertical-timeLine-item {
   position: absolute;
-  color: var(--font-color);
+  color: var(--font-color-content);
   width: 50%;
   display: flex;
   justify-content: right;
@@ -555,6 +640,9 @@ section.page-count::after {
   width: -moz-fit-content;
   width: fit-content;
 }
+.vertical-timeLine-item ul .mtop15 {
+  margin-top: 15%;
+}
 
 .bottom {
   bottom: 0;
@@ -568,33 +656,38 @@ section.page-count::after {
   background-image: linear-gradient(var(--font-color) 30%, var(--bg-color6) 90%);
 }
 
-.table-surfactant {
+.table-style {
   color: var(--font-color);
   width: 100%;
   font-size: 18px;
-  line-height: 3;
 }
-.table-surfactant thead {
-  border-bottom: solid 1px var(--font-color);
-  padding: 10px;
-}
-.table-surfactant thead td {
-  display: flex;
-  justify-content: center;
-}
-.table-surfactant tbody:last-child {
-  border-bottom: solid 1px var(--font-color);
-}
-.table-surfactant tr {
-  margin: 10px 0;
+.table-style tr {
+  margin: 0;
   display: flex;
   flex-wrap: nowrap;
 }
-.table-surfactant tr td {
+.table-style tr td {
   width: 20%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 }
-.table-surfactant tr td:first-child {
-  width: 15%;
+.table-style thead {
+  border-bottom: solid 1px var(--font-color);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+.table-style thead td {
+  height: 60px;
+  justify-content: center;
+}
+.table-style tbody:last-child {
+  border-bottom: solid 1px var(--font-color);
+}
+.table-style .tr-img td {
+  height: 200px;
+  justify-content: center;
 }
 
 .size-flowchart {
@@ -607,6 +700,7 @@ section.page-count::after {
   flex-direction: column;
   flex-wrap: nowrap;
   gap: 20px;
+  overflow: hidden;
 }
 
 a.ref {
@@ -803,6 +897,22 @@ section.type3 .body-box .inner-box {
 }
 .js-img-white-mode > img {
   transform: translate(-50%);
+}
+
+.js-white-website {
+  transform: rotate(0);
+}
+
+.js-white-ppt {
+  transform: rotateY(180deg);
+}
+
+.js-dark-website {
+  transform: rotate(-90deg);
+}
+
+.js-dark-ppt {
+  transform: rotate(-90deg) rotateY(180deg);
 }
 
 @media screen and (max-width: 600px) {

@@ -10,19 +10,19 @@ const NumExperiment = $('.experiment').length;
 const NumResults = $('.results').length;
 const NumDiscussion = $('.discussion').length;
 
-const anchorIntroduction = $windowHeight*(2);
-const anchorLiterature = anchorIntroduction+$windowHeight*NumLiterature;
-const anchorExperiment = anchorLiterature+$windowHeight*NumExperiment;
-const anchorResults = anchorExperiment+$windowHeight*NumResults;
-const anchorDiscussion = anchorResults+$windowHeight*NumDiscussion;
+const anchorIntroduction = $windowHeight * (2);
+const anchorLiterature = anchorIntroduction + $windowHeight * NumLiterature;
+const anchorExperiment = anchorLiterature + $windowHeight * NumExperiment;
+const anchorResults = anchorExperiment + $windowHeight * NumResults;
+const anchorDiscussion = anchorResults + $windowHeight * NumDiscussion;
 
 $scrollContainer.scroll(function () {
     var position = $(this).scrollTop();
     console.log(position);
-    if (position < $windowHeight*2) {
+    if (position < $windowHeight * 2) {
         $navItem.removeClass('js-click');
 
-    } else if (position > $windowHeight*2-200 && position <= anchorIntroduction) {
+    } else if (position > $windowHeight * 2 - 200 && position <= anchorIntroduction) {
         $('#introduction').addClass('js-click').siblings().removeClass('js-click');
 
     } else if (position > anchorIntroduction && position <= anchorLiterature) {
@@ -55,11 +55,25 @@ $navItem.click(function () {
 const $icon = $('.icon');
 const $iconMoon = $('.icon-moon');
 const $changeBackground = $('.js-change-white');
+const $imgHomepage = $('.img-homepage');
+
 
 $iconMoon.click(function () {
     $icon.toggleClass('js-icon-white-mode');
     $changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-change-white');
+
+    if ($imgHomepage.hasClass('js-white-ppt')) {
+        $imgHomepage.toggleClass('js-white-ppt').toggleClass('js-dark-ppt')
+    }else if ($imgHomepage.hasClass('js-dark-ppt')) {
+        $imgHomepage.toggleClass('js-dark-ppt').toggleClass('js-white-ppt')
+    }else if ($imgHomepage.hasClass('js-white-website')) {
+        $imgHomepage.toggleClass('js-white-website').toggleClass('js-dark-website')
+    }else if ($imgHomepage.hasClass('js-dark-website')) {
+        $imgHomepage.toggleClass('js-dark-website').toggleClass('js-white-website')
+    }
 })
+
+
 
 // ppt-web mode
 
@@ -68,10 +82,21 @@ const $webOnly = $('.web-only');
 const $pptOnly = $('.ppt-only');
 
 $pptOnly.hide();
+
 $iconComputer.click(function () {
     $(this).toggleClass('icon-computer').toggleClass('icon-ppt');
     $webOnly.toggle()
     $pptOnly.toggle()
+
+    if ($imgHomepage.hasClass('js-dark-website')) {
+        $imgHomepage.toggleClass('js-dark-website').toggleClass('js-dark-ppt');
+    } else if ($imgHomepage.hasClass('js-white-website')) {
+        $imgHomepage.toggleClass('js-white-website').toggleClass('js-white-ppt')
+    } else if ($imgHomepage.hasClass('js-white-ppt')) {
+        $imgHomepage.toggleClass('js-white-ppt').toggleClass('js-white-website')
+    } else if ($imgHomepage.hasClass('js-dark-ppt')) {
+        $imgHomepage.toggleClass('js-dark-ppt').toggleClass('js-dark-website')
+    }
 })
 
 // data box
@@ -98,6 +123,7 @@ $iconMoon.click(function () {
         "--bg-color6": "rgb(255, 255, 255)",
         "--bg-color7": "rgb(155, 155, 155)",
         "--font-color": "rgb(0, 0, 0)",
+        "--font-color-content": "rgb(57, 57, 57)",
     }) : $root.css({
         "--bg-color1": "rgb(255, 41, 92)",
         "--bg-color2": "rgb(10, 10, 10)",
@@ -107,23 +133,26 @@ $iconMoon.click(function () {
         "--bg-color6": "rgb(57, 57, 57)",
         "--bg-color7": "rgb(155, 155, 155)",
         "--font-color": "rgb(255, 255, 255)",
+        "--font-color-content": "rgb(255, 255, 255)",
     });
     bg = !bg;
 })
 
 
-// setting
+// language
 const $cn = $('.cn');
 const $en = $('.en');
 const $language = $('.icon-language');
 const $figCount = $('.fig-count-en');
+const $tableCount = $('.table-count-en');
 
 var language = true;
 $cn.addClass('js-cnange-language')
 $language.click(function () {
     language ? $language.css({ "background-position-y": "-240px", })
         : $language.css({ "background-position-y": "-270px", });
-    $figCount.toggleClass('fig-count-en').toggleClass('fig-count-cn')
+    $figCount.toggleClass('fig-count-en').toggleClass('fig-count-cn');
+    $tableCount.toggleClass('table-count-en').toggleClass('table-count-cn');
     $cn.toggleClass('js-cnange-language');
     $en.toggleClass('js-cnange-language');
     language = !language;
