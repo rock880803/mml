@@ -57,7 +57,6 @@ const $iconMoon = $('.icon-moon');
 const $changeBackground = $('.js-change-white');
 const $imgHomepage = $('.img-homepage');
 
-
 $iconMoon.click(function () {
     $icon.toggleClass('js-icon-white-mode');
     $changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-change-white');

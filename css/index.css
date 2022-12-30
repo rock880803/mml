@@ -72,11 +72,31 @@ p.cn {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
   grid-gap: 20px;
 }
 .grid > .img-box {
   width: auto;
+  height: auto;
+}
+
+.grid2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid12 {
+  grid-template-rows: repeat(2, 1fr);
+}
+.grid12 > .img-box {
+  width: 50%;
+  height: auto;
+}
+
+.grid3 {
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0px;
+}
+.grid3 > .img-box {
+  width: 100%;
   height: auto;
 }
 
@@ -147,22 +167,6 @@ span.sub {
   z-index: 1;
 }
 
-.img-hover-grid-overlap {
-  transition: 1s transform 5s;
-}
-.img-hover-grid-overlap:hover .grid {
-  display: block;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-.img-hover-grid-overlap:hover .white-protect:nth-child(2) {
-  transform: translateY(-100%);
-}
-.img-hover-grid-overlap:hover::after {
-  content: "";
-}
-
 .img-resp {
   max-width: 100%;
   height: auto;
@@ -212,11 +216,6 @@ span.sub {
   content: "圖 " counter(img) "、" attr(caption-cn) "。";
 }
 
-.fig-count-svg-offset::after {
-  content: "";
-  transform: translate(43px);
-}
-
 .fig-count-alpha {
   counter-set: alpha;
 }
@@ -224,7 +223,7 @@ span.sub {
   counter-increment: alpha;
   content: "(" counter(alpha, lower-alpha) ")";
   position: absolute;
-  color: #fff;
+  color: var(--font-color);
   top: 0;
   left: 0;
   margin: 5px;
@@ -246,13 +245,19 @@ span.sub {
 table {
   position: relative;
   margin-top: 5%;
+  color: var(--font-color);
+  line-height: 2;
+  border-bottom: var(--font-color) 2px solid;
+}
+table thead {
+  border-bottom: var(--font-color) 2px solid;
 }
 
 .table-count-cn::before,
 .table-count-en::before {
   counter-increment: table;
   position: absolute;
-  top: -60px;
+  top: -30px;
   font-size: 16px;
   line-height: 1.2;
   letter-spacing: 1px;
@@ -537,7 +542,7 @@ section.page-count::after {
 }
 
 .size-Oldage {
-  width: 40vw;
+  width: 100%;
 }
 
 .vertical-line {
@@ -594,7 +599,7 @@ section.page-count::after {
 }
 .vertical-timeLine-item:nth-child(even) {
   right: 0;
-  top: 20%;
+  top: 12%;
   padding-left: 40px;
 }
 .vertical-timeLine-item:nth-child(even)::after {
@@ -701,6 +706,10 @@ section.page-count::after {
   flex-wrap: nowrap;
   gap: 20px;
   overflow: hidden;
+}
+
+.w-70 {
+  width: 70%;
 }
 
 a.ref {

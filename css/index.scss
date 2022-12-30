@@ -73,11 +73,30 @@ p.cn {
 // tool-grid
 .grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     grid-gap: 20px;
 
     &>.img-box {
         width: auto;
+        height: auto;
+    }
+}
+
+.grid2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+.grid12 {
+    grid-template-rows: repeat(2, 1fr);
+    &>.img-box {
+        width: 50%;
+        height: auto;
+    }
+}
+
+.grid3 {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    &>.img-box {
+        width: 100%;
         height: auto;
     }
 }
@@ -147,29 +166,6 @@ span.sub {
     z-index: 1;
 }
 
-.img-hover-grid-overlap {
-    transition: 1s transform 5s;
-
-    &:hover {
-        .grid {
-            display: block;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-
-        .white-protect:nth-child(2) {
-            transform: translateY(-100%);
-        }
-
-        &::after {
-            content: "";
-        }
-    }
-}
-
-
-
 .img-resp {
     max-width: 100%;
     height: auto;
@@ -226,11 +222,6 @@ span.sub {
     content: "圖 " counter(img) "、" attr(caption-cn) "。";
 }
 
-.fig-count-svg-offset::after {
-    content: "";
-    transform: translate(43px);
-}
-
 .fig-count-alpha {
     counter-set: alpha;
 
@@ -238,7 +229,7 @@ span.sub {
         counter-increment: alpha;
         content: "(" counter(alpha, lower-alpha) ")";
         position: absolute;
-        color: #fff;
+        color: var(--font-color);
         top: 0;
         left: 0;
         margin: 5px;
@@ -262,13 +253,19 @@ span.sub {
 table {
     position: relative;
     margin-top: 5%;
+    color: var(--font-color);
+    line-height: 2;
+    border-bottom: var(--font-color) 2px solid;
+    thead {
+        border-bottom: var(--font-color) 2px solid;
+    }
 }
 
 .table-count-cn::before,
 .table-count-en::before {
     counter-increment: table;
     position: absolute;
-    top: -60px;
+    top: -30px;
 
     font-size: 16px;
     line-height: 1.2;
@@ -596,7 +593,7 @@ section.page-count::after {
 }
 
 .size-Oldage {
-    width: 40vw;
+    width: 100%;
 }
 
 // literature review
@@ -664,7 +661,7 @@ section.page-count::after {
 
     &:nth-child(even) {
         right: 0;
-        top: 20%;
+        top: 12%;
         padding-left: 40px;
 
         &::after {
@@ -799,7 +796,9 @@ section.page-count::after {
     overflow: hidden;
 }
 
-
+.w-70 {
+    width: 70%;
+}
 
 
 // reference
