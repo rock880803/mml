@@ -235,6 +235,9 @@ span.sub {
   left: 0;
   margin: 5px;
 }
+.fig-count-alpha .font-color-white::after {
+  color: #fff;
+}
 
 .fig-count-alpha-grid {
   counter-set: alpha;
@@ -557,6 +560,9 @@ section.page-count::after {
   left: 50%;
   width: 2px;
   height: 80%;
+}
+
+.bg-color {
   background-color: var(--font-color);
 }
 
@@ -671,7 +677,8 @@ section.page-count::after {
 .table-style {
   color: var(--font-color);
   width: 100%;
-  font-size: 18px;
+  font-size: 14px;
+  line-height: 1.5;
 }
 .table-style tr {
   margin: 0;

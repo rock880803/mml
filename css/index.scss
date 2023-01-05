@@ -240,6 +240,9 @@ span.sub {
         left: 0;
         margin: 5px;
     }
+    .font-color-white::after {
+        color: #fff;
+    }
 }
 
 .fig-count-alpha-grid {
@@ -605,12 +608,12 @@ section.page-count::after {
 // literature review
 .vertical-line {
     position: absolute;
-
     left: 50%;
     width: 2px;
     height: 80%;
+}
+.bg-color {
     background-color: var(--font-color);
-
 }
 
 .vertical-timeLine-ls {
@@ -739,8 +742,8 @@ section.page-count::after {
 .table-style {
     color: var(--font-color);
     width: 100%;
-    font-size: 18px;
-    // line-height: 1.5;
+    font-size: 14px;
+    line-height: 1.5;
 
     tr {
         margin: 0;
