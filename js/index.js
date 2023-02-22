@@ -63,11 +63,11 @@ $iconMoon.click(function () {
 
     if ($imgHomepage.hasClass('js-white-ppt')) {
         $imgHomepage.toggleClass('js-white-ppt').toggleClass('js-dark-ppt')
-    }else if ($imgHomepage.hasClass('js-dark-ppt')) {
+    } else if ($imgHomepage.hasClass('js-dark-ppt')) {
         $imgHomepage.toggleClass('js-dark-ppt').toggleClass('js-white-ppt')
-    }else if ($imgHomepage.hasClass('js-white-website')) {
+    } else if ($imgHomepage.hasClass('js-white-website')) {
         $imgHomepage.toggleClass('js-white-website').toggleClass('js-dark-website')
-    }else if ($imgHomepage.hasClass('js-dark-website')) {
+    } else if ($imgHomepage.hasClass('js-dark-website')) {
         $imgHomepage.toggleClass('js-dark-website').toggleClass('js-white-website')
     }
 })
@@ -110,8 +110,22 @@ $iconToggle.click(function () {
 // :root
 
 const $root = $(':root');
-var bg = true;
-
+// 初始背景顏色-白
+var bg = false;
+$root.css({
+    "--bg-color1": "rgb(100, 100, 100)",
+    "--bg-color2": "rgb(255, 255, 255)",
+    "--bg-color3": "rgb(255, 255, 255)",
+    "--bg-color4": "rgb(10, 10, 10)",
+    "--bg-color5": "rgb(255, 255, 255)",
+    "--bg-color6": "rgb(255, 255, 255)",
+    "--bg-color7": "rgb(155, 155, 155)",
+    "--font-color": "rgb(0, 0, 0)",
+    "--font-color-content": "rgb(57, 57, 57)",
+})
+$icon.toggleClass('js-icon-white-mode');
+$changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-change-white');
+// 
 $iconMoon.click(function () {
     bg ? $root.css({
         "--bg-color1": "rgb(100, 100, 100)",
