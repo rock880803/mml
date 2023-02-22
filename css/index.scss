@@ -70,16 +70,14 @@ p.cn {
     justify-content: center;
     align-items: center;
 }
-.max-area {
-    width: 100%;
-    height: 100%;
-    background-color: aquamarine;
+
+.margin-auto {
+    margin: auto;
 }
 // tool-grid
 .grid {
     display: grid;
     grid-gap: 20px;
-
     & > .img-box {
         width: auto;
         height: auto;
@@ -104,7 +102,7 @@ p.cn {
     grid-gap: 0px;
     grid-row: 20px;
     & .img-resp {
-        height: minmax(150px,100%);
+        height: minmax(150px, 100%);
     }
 }
 
@@ -125,6 +123,12 @@ p.cn {
 }
 .grid5 {
     grid-template-columns: repeat(5, minmax(120px, 1fr));
+    grid-template-rows: 0fr;
+    grid-gap: 0px;
+    row-gap: 0;
+}
+.grid6 {
+    grid-template-columns: repeat(6, minmax(120px, 1fr));
     grid-template-rows: 0fr;
     grid-gap: 0px;
     row-gap: 0;
@@ -159,22 +163,6 @@ span.sub {
     position: relative;
     width: fit-content;
     height: fit-content;
-}
-
-.top-15 {
-    top: -15%;
-}
-
-.max80vh {
-    max-height: 80vh;
-}
-
-.max50vw {
-    max-width: 50vw;
-}
-
-.mtop10 {
-    margin-top: 10px;
 }
 
 .img-shadow {
@@ -221,6 +209,29 @@ span.sub {
     &:hover img {
         opacity: 0.8;
     }
+}
+
+// tool-location
+
+.top-15 {
+    top: -15%;
+}
+// tool-sizing
+
+.max80vh {
+    max-height: 80vh;
+}
+
+.max50vw {
+    max-width: 50vw;
+}
+
+.max80vw {
+    max-width: 80vw;
+}
+
+.mtop10 {
+    margin-top: 10px;
 }
 
 // tool-counter
