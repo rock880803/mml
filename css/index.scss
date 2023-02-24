@@ -175,7 +175,7 @@ span.sub {
 
 .img-hover-zoomin:hover {
     position: relative;
-    transform: scale(2);
+    transform: scale(2.5);
     transition: transform 0.3s;
     z-index: 1;
 }
@@ -234,6 +234,10 @@ span.sub {
     margin-top: 10px;
 }
 
+.img-box.padding-RL-40px{
+    padding: 0 40px;
+}
+
 // tool-counter
 
 .fig-count-en::after,
@@ -284,7 +288,7 @@ span.sub {
         position: absolute;
         color: var(--font-color);
         top: 0;
-        left: -15px;
+        left: -10px;
         margin: 5px;
     }
 }
@@ -513,7 +517,7 @@ nav {
 // ppt
 
 section.ppt {
-    padding: 10vh 10vw 5vh;
+    padding: 5vh 10vw 5vh;
 }
 
 section.page-count::after {
@@ -1102,7 +1106,7 @@ section.type3 {
 
     //
     section.ppt {
-        padding: 5vh 10vw 5vh;
+        padding: 3vh 10vw 5vh;
     }
 
     // navegation
