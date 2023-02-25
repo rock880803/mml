@@ -518,6 +518,17 @@ section.page-count::after {
   color: var(--font-color);
 }
 
+h1.presentation-title {
+  position: relative;
+  z-index: 1;
+}
+h1.presentation-title ul {
+  margin-top: 16px;
+}
+h1.presentation-title ul li {
+  font-size: 24px;
+}
+
 .img-homepage {
   position: absolute;
   bottom: -100%;
@@ -525,6 +536,16 @@ section.page-count::after {
   transform: rotate(0);
   transform-origin: 50% 50%;
   transition: transform 0.5s;
+}
+
+.spray-dryer {
+  position: absolute;
+  right: -5%;
+  bottom: 0%;
+  max-width: 1000px;
+  width: 40%;
+  aspect-ratio: 1;
+  transform-origin: right bottom;
 }
 
 .outline {

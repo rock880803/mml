@@ -234,7 +234,7 @@ span.sub {
     margin-top: 10px;
 }
 
-.img-box.padding-RL-40px{
+.img-box.padding-RL-40px {
     padding: 0 40px;
 }
 
@@ -409,7 +409,7 @@ section {
     scroll-snap-align: start;
 }
 
-// navegation
+// TODO: navegation
 nav {
     position: fixed;
     width: 100vw;
@@ -514,7 +514,7 @@ nav {
     border-bottom: var(--font-color) solid 1px;
 }
 
-// ppt
+// TODO: ppt
 
 section.ppt {
     padding: 5vh 10vw 5vh;
@@ -530,7 +530,7 @@ section.page-count::after {
     color: var(--font-color);
 }
 
-// homepage
+// TODO: homepage
 .homepage {
     overflow: hidden;
 
@@ -552,7 +552,16 @@ section.page-count::after {
         color: var(--font-color);
     }
 }
-
+h1.presentation-title {
+    position: relative;
+    z-index: 1;
+    ul {
+        margin-top: 16px;
+        li {
+            font-size: 24px;
+        }
+    }
+}
 .img-homepage {
     position: absolute;
     bottom: -100%;
@@ -561,8 +570,17 @@ section.page-count::after {
     transform-origin: 50% 50%;
     transition: transform 0.5s;
 }
+.spray-dryer {
+    position: absolute;
+    right: -5%;
+    bottom: 0%;
+    max-width: 1000px;
+    width: 40%;
+    aspect-ratio: 1;
+    transform-origin: right bottom;
+}
 
-// outline
+// TODO: outline
 .outline {
     display: flex;
 
@@ -610,7 +628,7 @@ section.page-count::after {
     }
 }
 
-// introduction
+// TODO: introduction
 
 .head-box {
     margin-bottom: 40px;
@@ -634,7 +652,7 @@ section.page-count::after {
     width: 100%;
 }
 
-// literature review
+// TODO: literature review
 .vertical-line {
     position: absolute;
     left: 50%;
@@ -805,13 +823,13 @@ section.page-count::after {
     }
 }
 
-// experiment
+// TODO: experiment
 .size-flowchart {
     width: 60vw;
     height: auto;
 }
 
-// results
+// TODO: results
 .results {
     display: flex;
     flex-direction: column;
@@ -824,7 +842,7 @@ section.page-count::after {
     width: 70%;
 }
 
-// reference
+// TODO: reference
 a.ref {
     font-size: 8px;
     vertical-align: super;
