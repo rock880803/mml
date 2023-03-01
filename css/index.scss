@@ -143,9 +143,18 @@ p.cn {
 }
 
 // tool-title
+.title-box {
+    position: relative;
+}
 .title-border {
     border-bottom: 3px solid var(--font-color);
     margin-bottom: 20px;
+}
+
+span.sub-title-border {
+    font-size: 18px;
+    color: var(--bg-color1);
+    text-transform: none;
 }
 
 span.sup {
@@ -363,6 +372,11 @@ a.icon-ppt {
 
 a.icon-setting {
     background-position-y: -150px;
+    transform: rotate(0);
+    transition: transform 0.5s;
+    &:hover {
+        transform: rotate(72deg);
+    }
 }
 
 a.icon-sun {
@@ -382,12 +396,13 @@ a.icon-language {
     position: fixed;
     width: 100vw;
     height: 100vh;
-    z-index: 1;
+    z-index: 99;
     background-color: var(--bg-color2);
     color: var(--font-color);
     font-size: 32px;
     letter-spacing: 2px;
     text-transform: uppercase;
+    opacity: 0.8;
 }
 
 // section-scroll
@@ -416,41 +431,42 @@ nav {
     height: 6vh;
     display: flex;
     align-items: center;
-    transition: background-color 0.5s;
+    transition: background-color 0.5s, opacity 0.5s;
     z-index: 99;
-
     &:hover {
         background-color: var(--bg-color3);
-
-        .sub-nav-ls {
-            background-color: var(--bg-color3);
-        }
+        opacity: 1;
     }
 }
 
-// sub-nav
-.setting-nav-ls {
+// nav-icon
+.nav-icon {
+    position: relative;
+    padding: 10px;
+}
+.nav-icon:hover .setting-nav-ls {
     display: flex;
+}
+.setting-nav-ls {
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    top: 100%;
+    left: 0;
 
     .setting-nav-item {
         padding: 10px;
+        animation: slidein 0.3s forwards;
+        opacity: 0;
+        &:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+        &:nth-child(3) {
+            animation-delay: 0.2s;
+        }
     }
 }
-
-.sub-nav-ls {
-    display: none;
-    position: absolute;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-
-    li {
-        padding: 5px 5px 5px 10px;
-        background-color: transparent;
-        transition: all 0.2s;
-    }
-}
-
+// nav-ls
 .nav-ls {
     display: flex;
     width: 100%;
@@ -460,10 +476,12 @@ nav {
     align-items: center;
 }
 
+// nav-item
 .nav-item {
-    opacity: 0.4;
-
-    // js-click
+    position: relative;
+    opacity: 0.1;
+    flex: 1;
+    text-align: center;
     &:hover {
         opacity: 0.8;
     }
@@ -485,24 +503,104 @@ nav {
     }
 
     &:hover > a::after {
-        width: 80%;
+        width: 40%;
     }
 }
-
+// nav-item:hover -> sub-nav-item
 .nav-item:hover,
 .nav-icon:hover {
     .sub-nav-ls {
         display: flex;
+    }
+    .sub-nav-item {
+        display: flex;
+        animation: 0.5s slidein forwards;
 
-        li {
-            a {
-                display: block;
+        background-color: var(--bg-color5);
+
+        &:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+        a {
+            display: block;
+        }
+    }
+}
+
+.sub-nav-ls {
+    display: none;
+    position: absolute;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    left: 0;
+    width: 50%;
+
+    .sub-nav-item {
+        position: relative;
+        padding: 5px 5px 5px 10px;
+        transition: all 0.2s;
+        opacity: 0;
+        width: 100%;
+
+        &:hover {
+            background-color: var(--bg-color1);
+            color: var(--bg-color1);
+            width: 100%;
+        }
+        &:hover > .sub-sub-nav-ls {
+            display: flex;
+            flex-direction: column;
+        }
+        &:hover .sub-sub-nav-item {
+            animation: 0.5s slidein forwards;
+            &:nth-child(2) {
+                animation-delay: 0.1s;
             }
-
-            &:hover {
-                background-color: var(--bg-color5);
+            &:nth-child(3) {
+                animation-delay: 0.2s;
+            }
+            &:nth-child(4) {
+                animation-delay: 0.3s;
+            }
+            &:nth-child(5) {
+                animation-delay: 0.4s;
+            }
+            &:nth-child(6) {
+                animation-delay: 0.5s;
+            }
+            &:nth-child(7) {
+                animation-delay: 0.6s;
+            }
+            &:nth-child(8) {
+                animation-delay: 0.7s;
             }
         }
+    }
+}
+
+.sub-nav-item,
+.sub-sub-nav-item {
+    height: 36px;
+}
+// sub-sub-nav-ls
+
+.sub-sub-nav-ls {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    width: 100%;
+    & > li {
+        background-color: var(--bg-color5);
+    }
+}
+
+.sub-sub-nav-item {
+    opacity: 0;
+    padding: 0 0 0 5px;
+    &:hover {
+        background-color: var(--bg-color1);
     }
 }
 
@@ -532,6 +630,7 @@ section.page-count::after {
 
 // TODO: homepage
 .homepage {
+    position: relative;
     overflow: hidden;
 
     .head-box {
@@ -548,7 +647,6 @@ section.page-count::after {
     h3.date {
         position: absolute;
         bottom: 10%;
-        right: 5%;
         color: var(--font-color);
     }
 }
@@ -1012,7 +1110,6 @@ section.type3 {
         }
     }
 }
-
 .js-data-container-close {
     height: 40px;
     border-radius: 20px;
@@ -1192,5 +1289,20 @@ section.type3 {
     // js
     .js-list-open {
         transform: translate(0);
+    }
+}
+
+// TODO: animate
+@keyframes slidein {
+    0% {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    50% {
+        opacity: 0.7;
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
     }
 }

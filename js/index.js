@@ -2,6 +2,13 @@ const $nav = $('nav');
 const $navItem = $('.nav-item');
 const $immersionBlock = $('.immersion-block');
 
+$nav.hover(function(){
+    $immersionBlock.stop(true, false).html("").show().fadeIn(300);
+},function(){
+    $immersionBlock.stop(true, false).html("").show().fadeOut(300);
+});
+
+
 const $windowHeight = $(window).height();
 const $scrollContainer = $('.scroll-container');
 const NumIntroduction = $('.introduction').length;
@@ -113,7 +120,7 @@ const $root = $(':root');
 // 初始背景顏色-白
 var bg = false;
 $root.css({
-    "--bg-color1": "rgb(100, 100, 100)",
+    "--bg-color1": "rgb(67, 151, 141)",
     "--bg-color2": "rgb(255, 255, 255)",
     "--bg-color3": "rgb(255, 255, 255)",
     "--bg-color4": "rgb(10, 10, 10)",
