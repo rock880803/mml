@@ -97,6 +97,7 @@ p.cn {
 
 .grid15 {
   grid-template-rows: repeat(5, 1fr);
+  gap: 0;
 }
 
 #SEM-anchor .grid15 {
@@ -231,6 +232,10 @@ span.sub {
 
 .max50vw {
   max-width: 50vw;
+}
+
+.max60vw {
+  max-width: 60vw;
 }
 
 .max80vw {
