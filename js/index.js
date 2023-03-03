@@ -135,7 +135,7 @@ $changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-chan
 // 
 $iconMoon.click(function () {
     bg ? $root.css({
-        "--bg-color1": "rgb(100, 100, 100)",
+        "--bg-color1": "rgb(67, 151, 141)",
         "--bg-color2": "rgb(255, 255, 255)",
         "--bg-color3": "rgb(255, 255, 255)",
         "--bg-color4": "rgb(10, 10, 10)",

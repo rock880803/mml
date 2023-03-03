@@ -282,6 +282,7 @@ span.sub {
   top: 0;
   left: 0;
   margin: 5px;
+  z-index: 2;
 }
 .fig-count-alpha .font-color-white::after {
   color: #fff;
@@ -298,6 +299,19 @@ span.sub {
   top: 0;
   left: -10px;
   margin: 5px;
+}
+
+.fig-count-triangle > .img-box::before {
+  content: "";
+  position: absolute;
+  z-index: 1;
+  width: 0;
+  height: 0;
+  border-top: 50px solid #000;
+  border-right: 50px solid transparent;
+}
+.fig-count-triangle > .img-box::after {
+  color: #fff;
 }
 
 table {

@@ -286,6 +286,7 @@ span.sub {
         top: 0;
         left: 0;
         margin: 5px;
+        z-index: 2;
     }
     .font-color-white::after {
         color: #fff;
@@ -305,7 +306,20 @@ span.sub {
         margin: 5px;
     }
 }
-
+.fig-count-triangle > .img-box {
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        width: 0;
+        height: 0;
+        border-top: 50px solid #000;
+        border-right: 50px solid transparent;
+    }
+    &::after {
+        color: #fff;
+    }
+}
 table {
     position: relative;
     margin-top: 5%;
