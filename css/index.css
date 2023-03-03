@@ -5,7 +5,7 @@
   box-sizing: border-box;
 }
 
-*::-webkit-scrollbar-button {
+*::-webkit-scrollbar {
   display: none;
 }
 
@@ -48,7 +48,7 @@ p.cn {
 }
 
 :root {
-  --bg-color1: rgb(178, 27, 57);
+  --main-color: rgb(178, 27, 57);
   --bg-color2: rgb(10, 10, 10);
   --bg-color3: rgb(22, 22, 22);
   --bg-color4: rgb(28, 28, 28);
@@ -157,7 +157,7 @@ p.cn {
 
 span.sub-title-border {
   font-size: 18px;
-  color: var(--bg-color1);
+  color: var(--main-color);
   text-transform: none;
 }
 
@@ -191,7 +191,7 @@ span.sub {
   position: relative;
   transform: scale(2.5);
   transition: transform 0.3s;
-  z-index: 1;
+  z-index: 3;
 }
 
 .img-resp {
@@ -256,6 +256,7 @@ span.sub {
   width: 100%;
   top: 100%;
   left: 0;
+  z-index: 2;
   counter-increment: img;
   font-size: 16px;
   line-height: 1.5;
@@ -284,9 +285,6 @@ span.sub {
   margin: 5px;
   z-index: 2;
 }
-.fig-count-alpha .font-color-white::after {
-  color: #fff;
-}
 
 .fig-count-alpha-grid {
   counter-set: alpha;
@@ -297,11 +295,32 @@ span.sub {
   position: absolute;
   color: var(--font-color);
   top: 0;
-  left: -10px;
+  left: 0;
   margin: 5px;
 }
 
-.fig-count-triangle > .img-box::before {
+.fig-count-left-15px .white-protect::after {
+  left: 15px;
+}
+
+.fig-count-left-30px .white-protect::after {
+  left: 30px;
+}
+
+.fig-count-alpha-grid .fig-count-white::after {
+  color: #fff;
+}
+
+.fig-count-immersion-day-sem-only::before {
+  content: attr(immersion);
+  position: absolute;
+  color: #fff;
+  left: 0;
+  bottom: 0;
+  margin: 5px;
+}
+
+.fig-count-triangle .img-box::before {
   content: "";
   position: absolute;
   z-index: 1;
@@ -310,7 +329,7 @@ span.sub {
   border-top: 50px solid #000;
   border-right: 50px solid transparent;
 }
-.fig-count-triangle > .img-box::after {
+.fig-count-triangle .img-box::after {
   color: #fff;
 }
 
@@ -419,8 +438,6 @@ a.icon-language {
   height: 100vh;
   scroll-snap-type: y mandatory;
   overflow: hidden auto;
-  scrollbar-width: thin;
-  scrollbar-color: #000;
 }
 
 section {
@@ -546,8 +563,8 @@ nav:hover {
   width: 100%;
 }
 .sub-nav-ls .sub-nav-item:hover {
-  background-color: var(--bg-color1);
-  color: var(--bg-color1);
+  background-color: var(--main-color);
+  color: var(--main-color);
   width: 100%;
 }
 .sub-nav-ls .sub-nav-item:hover > .sub-sub-nav-ls {
@@ -600,7 +617,7 @@ nav:hover {
   padding: 0 0 0 5px;
 }
 .sub-sub-nav-item:hover {
-  background-color: var(--bg-color1);
+  background-color: var(--main-color);
 }
 
 .setting-box {
@@ -634,7 +651,7 @@ section.page-count::after {
   letter-spacing: 1px;
 }
 .homepage h2 {
-  color: var(--bg-color1);
+  color: var(--main-color);
 }
 .homepage h3.date {
   position: absolute;
@@ -812,7 +829,7 @@ h1.presentation-title ul li {
   width: fit-content;
 }
 .vertical-timeLine-item .time .title {
-  color: var(--bg-color1);
+  color: var(--main-color);
   font-size: 24px;
   margin: 0 5px;
 }
@@ -892,7 +909,6 @@ h1.presentation-title ul li {
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  gap: 20px;
   overflow: hidden;
 }
 
@@ -933,9 +949,6 @@ a.ref::after {
 }
 .reference .head-box {
   overflow-y: scroll;
-}
-.reference .head-box::-webkit-scrollbar {
-  display: none;
 }
 .reference .body-box {
   max-width: 100%;
@@ -1042,10 +1055,10 @@ section.type3 .body-box .inner-box {
 }
 .nav-ls .js-click > a {
   font-weight: 600;
-  color: var(--bg-color1);
+  color: var(--main-color);
 }
 .nav-ls .js-click > a::after {
-  background-color: var(--bg-color1);
+  background-color: var(--main-color);
 }
 
 .js-data-container-close {
@@ -1067,7 +1080,7 @@ section.type3 .body-box .inner-box {
 
 .js-change-background,
 .js-cnange-language {
-  color: var(--bg-color1);
+  color: var(--main-color);
 }
 
 .js-icon-bright-mode a.icon {

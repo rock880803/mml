@@ -120,7 +120,7 @@ const $root = $(':root');
 // 初始背景顏色-白
 var bg = false;
 $root.css({
-    "--bg-color1": "rgb(67, 151, 141)",
+    "--main-color": "rgb(67, 151, 141)",
     "--bg-color2": "rgb(255, 255, 255)",
     "--bg-color3": "rgb(255, 255, 255)",
     "--bg-color4": "rgb(10, 10, 10)",
@@ -135,7 +135,7 @@ $changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-chan
 // 
 $iconMoon.click(function () {
     bg ? $root.css({
-        "--bg-color1": "rgb(67, 151, 141)",
+        "--main-color": "rgb(67, 151, 141)",
         "--bg-color2": "rgb(255, 255, 255)",
         "--bg-color3": "rgb(255, 255, 255)",
         "--bg-color4": "rgb(10, 10, 10)",
@@ -145,7 +145,7 @@ $iconMoon.click(function () {
         "--font-color": "rgb(0, 0, 0)",
         "--font-color-content": "rgb(57, 57, 57)",
     }) : $root.css({
-        "--bg-color1": "rgb(255, 41, 92)",
+        "--main-color": "rgb(255, 41, 92)",
         "--bg-color2": "rgb(10, 10, 10)",
         "--bg-color3": "rgb(22, 22, 22)",
         "--bg-color4": "rgb(28, 28, 28)",
