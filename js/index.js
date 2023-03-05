@@ -2,9 +2,9 @@ const $nav = $('nav');
 const $navItem = $('.nav-item');
 const $immersionBlock = $('.immersion-block');
 
-$nav.hover(function(){
+$nav.hover(function () {
     $immersionBlock.stop(true, false).html("").show().fadeIn(300);
-},function(){
+}, function () {
     $immersionBlock.stop(true, false).html("").show().fadeOut(300);
 });
 
@@ -62,24 +62,13 @@ $navItem.click(function () {
 const $icon = $('.icon');
 const $iconMoon = $('.icon-moon');
 const $changeBackground = $('.js-change-white');
-const $imgHomepage = $('.img-homepage');
+const $imgInvert = $('.img-invert');
 
 $iconMoon.click(function () {
     $icon.toggleClass('js-icon-white-mode');
     $changeBackground.toggleClass('js-change-white').siblings().toggleClass('js-change-white');
-
-    if ($imgHomepage.hasClass('js-white-ppt')) {
-        $imgHomepage.toggleClass('js-white-ppt').toggleClass('js-dark-ppt')
-    } else if ($imgHomepage.hasClass('js-dark-ppt')) {
-        $imgHomepage.toggleClass('js-dark-ppt').toggleClass('js-white-ppt')
-    } else if ($imgHomepage.hasClass('js-white-website')) {
-        $imgHomepage.toggleClass('js-white-website').toggleClass('js-dark-website')
-    } else if ($imgHomepage.hasClass('js-dark-website')) {
-        $imgHomepage.toggleClass('js-dark-website').toggleClass('js-white-website')
-    }
+    $imgInvert.toggleClass('img-invert').toggleClass('js-img-invert');
 })
-
-
 
 // ppt-web mode
 
@@ -93,16 +82,6 @@ $iconComputer.click(function () {
     $(this).toggleClass('icon-computer').toggleClass('icon-ppt');
     $webOnly.toggle()
     $pptOnly.toggle()
-
-    if ($imgHomepage.hasClass('js-dark-website')) {
-        $imgHomepage.toggleClass('js-dark-website').toggleClass('js-dark-ppt');
-    } else if ($imgHomepage.hasClass('js-white-website')) {
-        $imgHomepage.toggleClass('js-white-website').toggleClass('js-white-ppt')
-    } else if ($imgHomepage.hasClass('js-white-ppt')) {
-        $imgHomepage.toggleClass('js-white-ppt').toggleClass('js-white-website')
-    } else if ($imgHomepage.hasClass('js-dark-ppt')) {
-        $imgHomepage.toggleClass('js-dark-ppt').toggleClass('js-dark-website')
-    }
 })
 
 // data box
