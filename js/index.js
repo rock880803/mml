@@ -76,7 +76,7 @@ const $iconComputer = $('.icon-computer');
 const $webOnly = $('.web-only');
 const $pptOnly = $('.ppt-only');
 
-$pptOnly.hide();
+$webOnly.hide();
 
 $iconComputer.click(function () {
     $(this).toggleClass('icon-computer').toggleClass('icon-ppt');

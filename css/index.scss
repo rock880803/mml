@@ -4,6 +4,54 @@
     box-sizing: border-box;
 }
 
+// ban
+
+.ban:after {
+    position: absolute;
+    left: 0;
+    top: 0;
+    content: "Ban";
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: 0.8;
+}
+
+.ban-just-once::before {
+    content: "Only for this time";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    opacity: .1;
+    z-index: 105;
+    font-size: 100px;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.P123-calcination {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10%;
+    aspect-ratio: 1;
+    z-index: 99;
+    opacity: .5;
+    transition: all .5s;
+
+    &:hover {
+        opacity: 1;
+        transform-origin: left top;
+        width: 100%;
+    }
+}
+// 
 *::-webkit-scrollbar {
     display: none;
 }
@@ -258,6 +306,7 @@ span.sub {
     line-height: 1.5;
     letter-spacing: 1px;
     color: var(--font-color);
+    text-align: justify;
 }
 
 .fig-count-en::after {
@@ -328,6 +377,8 @@ span.sub {
         color: #fff;
     }
 }
+
+// TODO: table tool
 table {
     position: relative;
     margin-top: 5%;
@@ -337,6 +388,11 @@ table {
     thead {
         border-bottom: var(--font-color) 2px solid;
     }
+}
+
+.font-12px,
+.font-12px > * {
+    font-size: 12px;
 }
 
 .table-count-cn::before,
@@ -912,6 +968,17 @@ h1.topic {
     flex-direction: column;
     flex-wrap: nowrap;
     overflow: hidden;
+}
+// TODO: conclusion
+
+.conclusion-ls {
+    list-style: disc;
+    font-size: 30px;
+    line-height: 2;
+    color: var(--font-color);
+    & span {
+        color: var(--main-color);
+    }
 }
 
 // TODO: reference
