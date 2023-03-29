@@ -125,6 +125,9 @@ p.cn {
 .margin-auto {
     margin: auto;
 }
+.float {
+    float: auto;
+}
 // TODO: tool-grid
 .grid {
     display: grid;
@@ -135,6 +138,9 @@ p.cn {
 }
 .grid-gap-20 {
     grid-gap: 20px;
+}
+.grid1 {
+    grid-template-columns: 60px;
 }
 .grid2 {
     grid-template-columns: repeat(2, 1fr);
@@ -290,6 +296,9 @@ span.sub {
 .w-50 {
     width: 50%;
 }
+.w-20 {
+    width: 20%;
+}
 .w-50vw {
     width: 50vw;
 }
@@ -382,6 +391,10 @@ span.sub {
 .fig-count-left-35px.white-protect::after {
     left: 35px;
 }
+.fig-count-top-5px .white-protect::after,
+.fig-count-top-5px.white-protect::after {
+    top: 5px;
+}
 .fig-count-white .img-box::after,
 .fig-count-white.white-protect::after {
     color: #fff;
@@ -472,6 +485,10 @@ table {
 
 .main-color {
     color: var(--main-color);
+}
+
+.font-italic {
+    font-style: italic;
 }
 
 // icon

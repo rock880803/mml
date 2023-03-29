@@ -122,6 +122,10 @@ p.cn {
   margin: auto;
 }
 
+.float {
+  float: auto;
+}
+
 .grid {
   display: grid;
 }
@@ -132,6 +136,10 @@ p.cn {
 
 .grid-gap-20 {
   grid-gap: 20px;
+}
+
+.grid1 {
+  grid-template-columns: 60px;
 }
 
 .grid2 {
@@ -300,6 +308,10 @@ span.sub {
   width: 50%;
 }
 
+.w-20 {
+  width: 20%;
+}
+
 .w-50vw {
   width: 50vw;
 }
@@ -392,6 +404,11 @@ span.sub {
   left: 35px;
 }
 
+.fig-count-top-5px .white-protect::after,
+.fig-count-top-5px.white-protect::after {
+  top: 5px;
+}
+
 .fig-count-white .img-box::after,
 .fig-count-white.white-protect::after {
   color: #fff;
@@ -479,6 +496,10 @@ table thead {
 
 .main-color {
   color: var(--main-color);
+}
+
+.font-italic {
+  font-style: italic;
 }
 
 .icon > a,
