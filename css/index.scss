@@ -125,9 +125,6 @@ p.cn {
 .margin-auto {
     margin: auto;
 }
-.float {
-    float: auto;
-}
 // TODO: tool-grid
 .grid {
     display: grid;
@@ -383,6 +380,10 @@ span.sub {
     }
 }
 
+.fig-count-left-10px .white-protect::after,
+.fig-count-left-10px.white-protect::after{
+    left: 10px;
+}
 .fig-count-left-20px .white-protect::after,
 .fig-count-left-20px.white-protect::after{
     left: 20px;
