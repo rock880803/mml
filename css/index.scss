@@ -424,13 +424,14 @@ span.sub {
 }
 
 .fig-highlight::after {
-    content: "";
+    content: "*";
+    font-size: 32px;
     position: absolute;
     z-index: 1;
     width: 15px;
     height: 15px;
-    background-color: rgb(240, 140, 160);
-    transform: rotate(45deg);
+    /* background-color: rgb(240, 140, 160); */
+    /* transform: rotate(45deg); */
     right: 0;
     margin: 8px;
 }
