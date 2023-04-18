@@ -133,6 +133,12 @@ p.cn {
         height: auto;
     }
 }
+.column-gap-5 {
+    column-gap: 5px;
+}
+.grid-gap-5 {
+    grid-gap: 5px;
+}
 .grid-gap-20 {
     grid-gap: 20px;
 }
@@ -280,6 +286,12 @@ span.sub {
     position: absolute;
     left: 90px;
     top: 3px;
+    backdrop-filter: blur(1px);
+}
+.position-left100-top30 {
+    position: absolute;
+    left: 100px;
+    top: 30px;
     backdrop-filter: blur(1px);
 }
 // tool-sizing
