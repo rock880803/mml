@@ -273,8 +273,20 @@ span.sub {
   border: var(--font-color) 3px solid;
 }
 
+.img-insert-left-bottom {
+  position: absolute;
+  width: 50%;
+  height: auto;
+  left: 0;
+  bottom: 0;
+}
+
 .js-img-invert {
   filter: invert(1) contrast(2);
+}
+
+.top-10 {
+  top: 10%;
 }
 
 .top-15 {
@@ -782,6 +794,9 @@ nav:hover {
 .sub-nav-item:hover .sub-sub-nav-item:nth-child(6) {
   animation-delay: 0.5s;
 }
+.sub-nav-item:hover .sub-sub-nav-item:nth-child(7) {
+  animation-delay: 0.6s;
+}
 
 .sub-sub-nav-item {
   opacity: 0;
@@ -947,7 +962,6 @@ h1.topic li {
 }
 
 .outline-ls {
-  text-transform: capitalize;
   font-size: 30px;
   line-height: 1.5;
   color: var(--font-color);
