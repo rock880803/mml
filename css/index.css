@@ -281,15 +281,33 @@ span.sub {
   bottom: 0;
 }
 
+.img-insert-center {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 .js-img-invert {
   filter: invert(1) contrast(2);
+}
+
+.top-left {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  left: 0px;
+}
+
+.left-100- {
+  position: absolute;
+  left: -100%;
 }
 
 .top-10 {
   top: 10%;
 }
 
-.top-15 {
+.top-15- {
   top: -15%;
 }
 
@@ -511,6 +529,13 @@ table thead {
   content: "表 " counter(table) "、" attr(caption-cn) "。";
 }
 
+.table-count-top-10- {
+  top: 10px;
+}
+.table-count-top-10-::before {
+  top: -40px;
+}
+
 .reference {
   counter-set: ref-count;
 }
@@ -533,9 +558,10 @@ table thead {
   font-style: italic;
 }
 
+.icon,
 .icon > a,
 .icon > div {
-  display: block;
+  display: inline-block;
   background: url(../images/icon.png) no-repeat;
   width: 30px;
   height: 30px;
@@ -546,20 +572,20 @@ span > .icon-list {
 }
 
 a.icon-toggle {
-  background-position-y: -120px;
+  background-position-y: -150px;
   transition: transform 0.5s;
 }
 
 a.icon-computer {
-  background-position-y: -30px;
-}
-
-a.icon-ppt {
   background-position-y: -60px;
 }
 
+a.icon-ppt {
+  background-position-y: -90px;
+}
+
 a.icon-setting {
-  background-position-y: -150px;
+  background-position-y: -180px;
   transform: rotate(0);
   transition: transform 0.5s;
 }
@@ -568,7 +594,7 @@ a.icon-setting:hover {
 }
 
 a.icon-sun {
-  background-position-y: -180px;
+  background-position-y: -210px;
 }
 
 a.icon-moon {
@@ -577,6 +603,14 @@ a.icon-moon {
 
 a.icon-language {
   background-position-y: -270px;
+}
+
+a.icon-eye {
+  background-position-y: -300px;
+}
+
+a.icon-eye-slash {
+  background-position-y: -330px;
 }
 
 .immersion-block {
@@ -1324,7 +1358,8 @@ section.type3 .body-box .inner-box {
 }
 
 .js-cnange-language,
-.js-change-white {
+.js-change-white,
+.js-eye-close {
   display: none;
 }
 

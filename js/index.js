@@ -155,6 +155,20 @@ $language.click(function () {
     $cn.toggleClass('js-cnange-language');
     $en.toggleClass('js-cnange-language');
     language = !language;
+    console.log(language);
+})
+
+// note
+
+const $eye = $('.icon-eye');
+const $eyeSlash = $('.icon-eye-slash');
+
+var eye = 1;
+$eye.click(function () {
+    eye ? $(this).toggleClass("icon-eye").toggleClass("icon-eye-slash").parents().find('.js-eye-open').toggleClass("js-eye-open").toggleClass("js-eye-close") :
+        $(this).toggleClass("icon-eye").toggleClass("icon-eye-slash").parents().find('.js-eye-close').toggleClass("js-eye-open").toggleClass("js-eye-close")
+    eye = !eye;
+    console.log(eye);
 })
 
 
@@ -185,9 +199,9 @@ const $window = $(window).width();
 
 // img
 
-const $imgBox = $('.img-box-border>img');
+// const $imgBox = $('.img-box-border>img');
 
-$imgBox.load(function () {
-    $('this').width();
-    $('this').height();
-})
+// $imgBox.load(function () {
+//     $('this').width();
+//     $('this').height();
+// })
